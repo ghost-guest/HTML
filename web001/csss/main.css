@@ -1,0 +1,34 @@
+.div1{
+    width: 285px;
+    height: 310px;
+    border-top: 1px solid #c8dcf2;
+    border-bottom: 1px solid #c8dcf2;
+    margin: -155px 0 0 -142.5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.title{
+    font-size: 16px;
+    color: #172c45;
+    font-family: 'Microsoft Yahei';
+    float: left;
+    text-align: center;
+    margin-top: 12px;
+}
+.div2{
+    width: 100%;
+    height: 40px;
+}
+.div3{
+    width: 100%;
+    height: 80px;
+}
+p{
+    font:12px;
+    font-family: "Microsoft Yehei";
+    color: #737373;
+    line-height: 18px;
+    text-indent: 24px;
+    text-align: justify;
+}
