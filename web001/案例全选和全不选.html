@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .tb {
+        width: 500px;
+        height: 400px;
+        margin: 100px auto;
+    }
+
+    th {
+        background-color: red;
+    }
+
+    td {
+        background-color: gray;
+    }
+</style>
+
+<body>
+    <div class="tb">
+        <table>
+            <tr>
+                <th><input type="checkbox" name="" id="j_cball"></th>
+                <th>菜名</th>
+                <th>饭店</th>
+            </tr>
+            <tbody id="j_tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>鱼香肉丝</td>
+                    <td>北京大饭店</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>狗宝咸菜</td>
+                    <td>天津大饭店</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>京酱肉丝</td>
+                    <td>南京大饭店</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <script>
+            function my$(id) {
+                return document.getElementById(id)
+            };
+            //  获取全选的这个复选框
+            var ckall = my$('j_cball');
+            // 获取所有的小复选框
+            var cks = my$('j_tb').getElementsByTagName('input');
+            // 点击全选的这个复选框，获取他当前的状态，然后设置tbody中所有复选框的状态
+            ckall.onclick = function () {
+                for (var i = 0; i < cks.length; i++) {
+                    cks[i].checked = this.checked;
+                }
+            }
+            // 获取tbody所有的复选框，分别注册点击事件
+            for (var i = 0; i < cks.length; i++) {
+                cks[i].onclick = function () {
+                    var flag = true //默认都被选中了
+                    // 判断所有的复选框是否都被选中
+                    for (var j = 0; j < cks.length; j++) {
+                        if (!cks[j].checked) {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    ckall.checked = flag;
+                }
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

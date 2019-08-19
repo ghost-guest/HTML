@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="创建p" id="btn">
+    <div id="dv"></div>
+
+
+    <script>
+        // document.createElement("标签名称"); 对象
+        // 把元素追加到父级元素中
+        document.getElementById("btn").onclick = function () {
+
+            // 只创建一个p
+            // 有则删除，无则创建
+            if (!document.getElementById("p")) {
+                var obj = document.createElement("p");
+                obj.innerHTML = "这是一个p标签"
+                obj.id = "p"
+                document.getElementById("dv").appendChild(obj);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

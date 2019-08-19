@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #dv{
+        width: 300px;
+        height: 200px;
+        border: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="创建一个p">
+    <div id="dv"></div>
+    <script>
+    document.getElementById("btn").onclick = function(){
+        var dd = document.getElementById("dv");
+        console.log(dd);
+        dd.innerHTML="<p>我是一个p标签</p>";
+    };
+    </script>
+</body>
+</html>

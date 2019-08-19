@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 500px;
+        height: 400px;
+        background-color: green;
+        
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value='创建列表' id="btn">
+    <div id="cls"></div>
+    <script>
+    
+    var names = ["123", "22", "444", "555","5666"]
+    document.getElementById("btn").onclick = function(){
+        var str  = "<ul style='list-style-type: none; cursor: pointer;'>"
+        for (var i =0; i<names.length; i++){
+            str += "<li>"+names[i]+"</li>"
+        }
+
+        str += "</ul>"
+        document.getElementById("cls").innerHTML = str;
+    }
+    </script>
+</body>
+</html>
