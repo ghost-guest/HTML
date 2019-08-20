@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #dv{
+        width: 500px;
+        margin: 100px auto;
+    }
+    .cont{
+        width: 350px;
+        height: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div  id="dv">
+        <input type="text" id="cont">
+        <input type="button" value="搜索" id="btn">
+    </div>
+    <script>
+    var names = ["小红正好","小王123","小李啦啦啦啦","超爷","利好","强大"]
+    document.getElementById("cont").onkeyup = function () {
+        
+        if (document.getElementById("box")){
+            document.getElementById("dv").removeChild(document.getElementById("box"));
+        }
+        
+        // 获取文本框的内容
+        var text = this.value;
+        // 与names的字符串进行匹配
+        var temarr = [];
+        for (var i=0; i<names.length; i++){
+            if (names[i].indexOf(text)==0){
+                temarr.push(names[i]);
+            }
+        }
+        // console.log(temarr);
+        if(this.value.length==0||temarr.length==0){
+            if(document.getElementById("box")){
+                document.getElementById("dv").removeChild(document.getElementById("box"));
+            };
+            return;
+        }
+        // 遍历数组创建div
+        var dvobj = document.createElement("div");
+        document.getElementById("dv").appendChild(dvobj);
+        dvobj.style.width  = "350px";
+        dvobj.id = "box";
+        dvobj.style.border = "1px solid green";
+        // 循环遍历临时数组
+        for (var j=0; j<temarr.length; j++){
+            // 创建p标签
+            var pobj = document.createElement("p");
+            dvobj.appendChild(pobj);
+            pobj.innerHTML = temarr[j];
+            pobj.style.margin = 0;
+            pobj.style.padding = 0;
+            pobj.style.cursor = "pointer";
+            pobj.style.marginLeft = "5px";
+            pobj.style.marginTop = '5px';
+            // 鼠标进入
+            pobj.onmouseover = function () {
+                this.style.backgroundColor = "red";
+              }
+            // 鼠标离开
+            pobj.onmouseout = function () {
+                this.style.backgroundColor = "";
+              }
+
+        }
+
+      };
+    
+    </script>
+</body>
+</html>
